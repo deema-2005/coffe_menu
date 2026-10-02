@@ -30,7 +30,6 @@ class GreetingRow extends StatelessWidget {
             ),
           ],
         ),
-        // الدائرة الرمزية (Avatar) بقطر 44 ولون خلفية محدد
         Container(
           width: 44,
           height: 44,

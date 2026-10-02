@@ -5,7 +5,6 @@ import 'drink_card.dart';
 class PopularSection extends StatelessWidget {
   const PopularSection({super.key});
 
-  // إضافة const هنا تمنع التعارض وتجعل المصفوفة متوافقة تماماً مع شروط StatelessWidget
   final List<Drink> _drinks = const [
     Drink(name: 'Caramel Macchiato', subtitle: 'With oat milk', price: '\$4.50'),
     Drink(name: 'Caffè Latte', subtitle: 'Rich & creamy', price: '\$4.00'),
@@ -36,7 +35,6 @@ class PopularSection extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 16),
-        // بناء عناصر الشبكة من القائمة البرمجية ديناميكياً وبأسلوب نظيف
         GridView.count(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),

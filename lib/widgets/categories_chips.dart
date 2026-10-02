@@ -6,14 +6,14 @@ class CategoriesChips extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    // قائمة التصنيفات الثابتة
+
     final categories = ['All', 'Espresso', 'Latte', 'Cappuccino'];
 
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: List.generate(categories.length, (index) {
-          final isSelected = index == 0; // العنصر الأول محدد فقط
+          final isSelected = index == 0;
 
           return Padding(
             padding: EdgeInsets.only(right: index == categories.length - 1 ? 0 : 10.0),

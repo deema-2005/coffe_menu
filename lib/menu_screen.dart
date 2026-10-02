@@ -15,19 +15,19 @@ class MenuScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          // المسافة الجانبية المطلوبة في التصميم = 20
+
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
               SizedBox(height: 16),
               GreetingRow(),
-              SizedBox(height: 24), // الفراغ بين الأقسام = 24
+              SizedBox(height: 24),
               SearchBarWidget(),
               SizedBox(height: 24),
               CategoriesChips(),
               SizedBox(height: 24),
-              OfferCard(), // كارت التحدي الإيجابي
+              OfferCard(),
               SizedBox(height: 24),
               PopularSection(),
               SizedBox(height: 16),

@@ -8,17 +8,15 @@ class OfferCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    // 2. استخدام ClipRRect لقص الدوائر الخلفية عند حواف الكارت المنحنية
     return ClipRRect(
       borderRadius: BorderRadius.circular(16),
       child: Container(
         width: double.infinity,
         height: 140,
-        color: theme.primaryColor, // اللون البني الموحد من الـ Theme
-        // 1. استخدام Stack لوضع الدوائر في الخلفية والنصوص فوقها
+        color: theme.primaryColor,
         child: Stack(
           children: [
-            // الدائرة الخلفية الأولى
+
             Positioned(
               right: -40,
               top: -40,
@@ -27,7 +25,7 @@ class OfferCard extends StatelessWidget {
                 backgroundColor: const Color(0xFFF1EAE4).withOpacity(0.15),
               ),
             ),
-            // الدائرة الخلفية الثانية
+
             Positioned(
               right: 20,
               bottom: -50,
@@ -36,14 +34,13 @@ class OfferCard extends StatelessWidget {
                 backgroundColor: const Color(0xFFF1EAE4).withOpacity(0.1),
               ),
             ),
-            // محتويات الكارت النصية (الجهة اليسرى)
+
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // 4. استخدام Text.rich وكتابة TextSpan لتنسيق النص بأحجام مختلفة في سطر واحد
                   Text.rich(
                     TextSpan(
                       children: [
@@ -66,7 +63,6 @@ class OfferCard extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 12),
-                  // 5. استخدام Wrap لعرض الحبات الصغيرة لتجنب الـ Overflow إذا ضاقت الشاشة
                   Wrap(
                     spacing: 8,
                     runSpacing: 4,
@@ -78,16 +74,15 @@ class OfferCard extends StatelessWidget {
                 ],
               ),
             ),
-            // 3. استخدام Transform.rotate لتدوير شارة الخصم المائلة بزاوية راديان
             Positioned(
               right: 30,
               top: 40,
               child: Transform.rotate(
-                angle: -15 * (math.pi / 180), // تحويل -15 درجة إلى راديان
+                angle: -15 * (math.pi / 180),
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
-                    color: theme.colorScheme.secondary, // لون الكراميل من الـ Theme
+                    color: theme.colorScheme.secondary,
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(

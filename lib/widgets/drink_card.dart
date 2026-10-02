@@ -29,12 +29,11 @@ class DrinkCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // مساحة الصورة البديلة (Placeholder)
+
             Container(
               width: double.infinity,
               height: 100,
               decoration: BoxDecoration(
-                // تلوين المساحة بالرمادي في حال كان المنتج Sold Out
                 color: drink.isAvailable ? theme.cardColor : Colors.grey.shade400,
                 borderRadius: BorderRadius.circular(12),
               ),
@@ -57,7 +56,6 @@ class DrinkCard extends StatelessWidget {
               style: theme.textTheme.bodyMedium?.copyWith(fontSize: 12, fontWeight: FontWeight.w400),
             ),
 
-            // تم استبدال الـ Spacer() المسبب للخطأ بمسافة ثابتة متوافقة مع أبعاد الـ GridView لمنع الـ Overflow
             const SizedBox(height: 14),
 
             Row(
@@ -67,7 +65,7 @@ class DrinkCard extends StatelessWidget {
                   drink.price,
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: theme.primaryColor),
                 ),
-                // التحكم في زر الإضافة بناءً على حالة توفر المشروب
+
                 if (drink.isAvailable)
                   Icon(Icons.add_circle, color: theme.primaryColor, size: 24)
                 else
